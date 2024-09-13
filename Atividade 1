@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void multiply_by_x(int vet[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        vet[i] *= x;
+    }
+}
+
+int main() {
+    int n;
+    printf("Digite o número de elementos: ");
+    scanf("%d", &n);
+
+    int vet[n];
+    for (int i = 0; i < n; i++) {
+        printf("Digite o elemento %d: ", i);
+        scanf("%d", &vet[i]);
+    }
+
+    int x;
+    printf("Digite o valor para multiplicar por: ");
+    scanf("%d", &x);
+
+    multiply_by_x(vet, n, x);
+
+    printf("Elementos multiplicados por %d:\n", x);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
