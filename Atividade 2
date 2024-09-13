@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void print_in_reverse(int vet[], int n) {
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Digite o número de elementos: ");
+    scanf("%d", &n);
+
+    int vet[n];
+    for (int i = 0; i < n; i++) {
+        printf("Digite o elemento %d: ", i);
+        scanf("%d", &vet[i]);
+    }
+
+    printf("Elementos em ordem inversa:\n");
+    print_in_reverse(vet, n);
+
+    return 0;
+}
