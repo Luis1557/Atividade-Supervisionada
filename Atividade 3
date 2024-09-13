@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void print_sorted(int vet[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (vet[j] > vet[j + 1]) {
+                swap(&vet[j], &vet[j + 1]);
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Digite o número de elementos: ");
+    scanf("%d", &n);
+
+    int vet[n];
+    for (int i = 0; i < n; i++) {
+        printf("Digite o elemento %d: ", i);
+        scanf("%d", &vet[i]);
+    }
+
+    printf("Elementos em ordem crescente:\n");
+    print_sorted(vet, n);
+
+    return 0;
+}
